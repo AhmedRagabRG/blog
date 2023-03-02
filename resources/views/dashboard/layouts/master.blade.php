@@ -27,12 +27,9 @@
     <img src="{{ asset('assets/admin/images/loader.svg') }}" class="loader-img" alt="Loader">
 </div>
 
-@include('dashboard.components.navbar')
-
 <!-- GLOBAL-LOADER -->
 
 <div class="page">
-
     <div class="page-main">
         @include('dashboard.components.navbar')
 
@@ -40,16 +37,12 @@
 
         <div class="main-content app-content mt-0">
             <div class="side-app">
-
-                <!-- CONTAINER -->
                 <div class="main-container container-fluid">
                     @yield('content')
                 </div>
             </div>
         </div>
     </div>
-
-    @include('dashboard.components.slidebar')
 
     @include('dashboard.components.country-selector')
 
@@ -58,6 +51,28 @@
 </div>
 
 @include('dashboard.components.footer-script')
+<script type="text/javascript">
+
+    $.extend(true, $.fn.dataTable.defaults, {
+        bFilter: !1,
+        bInfo: !1,
+        bLengthChange: !1,
+        oLanguage: {
+            oPaginate: {
+                sFirst: "First",
+                sLast: "Last",
+                sNext: "{{__('main.next')}}",
+                sPrevious: "{{__('main.previous')}}",
+            },
+            sInfo: "{{__('main.sInfo')}}",
+            sEmptyTable: "{{__('main.sEmptyTable')}}",
+            sLengthMenu: "{{__('main.sLengthMenu')}}",
+            sSearch: "{{__('main.search')}}",
+            sZeroRecords: "{{__('main.sZeroRecords')}}",
+        },
+    });
+
+</script>
 </body>
 
 </html>

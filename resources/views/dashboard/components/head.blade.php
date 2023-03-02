@@ -7,7 +7,7 @@
 <link href="{{asset('assets/admin/css/transparent-style.css')}}" rel="stylesheet">
 <link href="{{asset('assets/admin/css/skin-modes.css')}}" rel="stylesheet" />
 <link href="{{asset('assets/admin/css/wizard.css')}}" rel="stylesheet" />
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.css">
 <!--- FONT-ICONS CSS -->
 <link href="{{asset('assets/admin/css/icons.css')}}" rel="stylesheet" />
 

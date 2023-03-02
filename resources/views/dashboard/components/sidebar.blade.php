@@ -1,4 +1,3 @@
-
 <!--APP-SIDEBAR-->
 <div class="sticky">
     <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
@@ -21,26 +20,31 @@
                 </svg></div>
             <ul class="side-menu">
                 <li class="slide">
-                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="index.html">
+                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="{{ route('dashboard.dashboard') }}">
                         <i class="side-menu__icon fe fe-home"></i>
-                        <span class="side-menu__label">{{__('main.dashboard')}}</span>
+                        <span class="side-menu__label">{{__('sidebar.dashboard')}}</span>
                     </a>
                 </li>
                 <li class="sub-category">
                     <h3>General</h3>
                 </li>
                 <li class="slide">
-                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)">
-                        <i class="side-menu__icon fa fa-university"></i><span
-                            class="side-menu__label">{{__('academic.Academics')}}</span><i
-                            class="angle fe fe-chevron-right"></i></a>
-                    <ul class="slide-menu">
-                        <li class="side-menu-label1"><a href="javascript:void(0)">Apps</a></li>
-                        <li><a href="{{ url('academic') }}" class="slide-item"> {{__('academic.Academics_list')}}</a>
-                        </li>
-                        <li><a href="{{ url('academic/create') }}"
-                               class="slide-item"> {{__('academic.Academics_add')}}</a></li>
-                    </ul>
+                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="{{ route('dashboard.users.index') }}">
+                        <i class="side-menu__icon fe fe-users"></i>
+                        <span class="side-menu__label">{{__('sidebar.users')}}</span>
+                    </a>
+                </li>
+                <li class="slide">
+                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="{{ route('dashboard.categories.index') }}">
+                        <i class="side-menu__icon fe fe-list"></i>
+                        <span class="side-menu__label">{{__('sidebar.categories')}}</span>
+                    </a>
+                </li>
+                <li class="slide">
+                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="{{ route('dashboard.settings') }}">
+                        <i class="side-menu__icon fe fe-settings"></i>
+                        <span class="side-menu__label">{{__('sidebar.settings')}}</span>
+                    </a>
                 </li>
             </ul>
             <div class="slide-right" id="slide-right">

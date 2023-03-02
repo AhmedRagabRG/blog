@@ -29,8 +29,7 @@
 <script src="{{asset('assets/admin/plugins/formwizard/fromwizard.js')}}"></script>
 
 <!-- SWEET-ALERT JS -->
-<script src="{{asset('assets/admin/plugins/sweet-alert/sweetalert.min.js')}}"></script>
-<script src="{{asset('assets/admin/js/sweet-alert.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.all.min.js"></script>
 
 <!-- INTERNAL Accordion-Wizard-Form js-->
 <script src="{{asset('assets/admin/plugins/accordion-Wizard-Form/jquery.accordion-wizard.min.js')}}"></script>
@@ -122,6 +121,9 @@
 <script src="{{asset('assets/admin/plugins/fancyuploder/jquery.fancy-fileupload.js')}}"></script>
 <script src="{{asset('assets/admin/plugins/fancyuploder/fancy-uploader.js')}}"></script>
 
+<script src="{{ asset('assets/plugins/select2/select2.full.min.js') }}"></script>
+<script src="{{ asset('assets/js/select2.js') }}"></script>
+
 <!-- INTERNAL INDEX JS -->
 <script src="{{asset('assets/admin/js/index1.js')}}"></script>
 
@@ -131,4 +133,4 @@
 <!-- CUSTOM JS -->
 <script src="{{asset('assets/admin/js/custom.js')}}"></script>
 
-@yield('js')
+@stack('js')

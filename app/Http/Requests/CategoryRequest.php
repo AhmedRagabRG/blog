@@ -2,10 +2,11 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\UserRoleNameRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-class SettingsRequest extends FormRequest
+class CategoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,19 +24,13 @@ class SettingsRequest extends FormRequest
     public function rules(): array
     {
         $data = [
-            'logo' => 'nullable|image|mimes:jpg,jpeg,png',
-            'favicon' => 'nullable|image|mimes:jpg,jpeg,png',
-            'facebook' => 'nullable|string',
-            'twitter' => 'nullable|string',
-            'instagram' => 'nullable|string',
-            'email' => 'nullable|string',
-            'phone' => 'nullable|string',
+            'img' => 'nullable|image|mimes:jpg,jpeg,png',
+            'parent' => 'required|string',
         ];
 
         foreach (LaravelLocalization::getSupportedLocales() as $key => $value) {
-            $data[$key . '*.title'] = 'nullable|string';
-            $data[$key . '*.content'] = 'nullable|string';
-            $data[$key . '*.address'] = 'nullable|string';
+            $data[$key . '*.title'] = 'required|string';
+            $data[$key . '*.content'] = 'required|string';
         }
 
         return $data;

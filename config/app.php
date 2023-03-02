@@ -73,6 +73,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Timezone
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the roles for your application, which
+    | will be used by the PHP date and date-time functions. We have gone
+    | ahead and set this to a sensible default for you out of the box.
+    |
+    */
+
+    'roles' => ['admin', 'writer'],
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Locale Configuration
     |--------------------------------------------------------------------------
     |
@@ -200,6 +213,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+
+        Yajra\DataTables\DataTablesServiceProvider::class,
     ],
 
     /*

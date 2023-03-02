@@ -3,15 +3,18 @@
 @section('title') Dashboard @endsection
 
 @section('content')
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+    <div class="page-header">
+        <h1 class="page-title">Form-Elements</h1>
+        <div>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Forms</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Form-Elements</li>
+            </ol>
         </div>
-    @endif
+    </div>
+
+    @include('dashboard.components.error')
+
     <form method="post" action="{{ route('dashboard.settings.update', ['setting' => $setting]) }}" enctype="multipart/form-data">
         @csrf
         <div class="card">
@@ -104,4 +107,6 @@
 
         <button type="submit">Submit</button>
     </form>
+
+
 @endsection

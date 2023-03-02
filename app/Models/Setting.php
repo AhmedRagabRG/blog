@@ -24,7 +24,7 @@ class Setting extends Model implements TranslatableContract
             ];
 
             foreach (LaravelLocalization::getSupportedLocales() as $key => $value) {
-                $data["$key"]['title'] = "s";
+                $data["$key"]['title'] = null;
             }
 
             self::create($data);
